@@ -2,57 +2,24 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-
         Scanner scanner = new Scanner(System.in);
 
-        String firstname = "", lastname = "", course = "", section = "";
-        int age = 0, studentId = 0;
+        System.out.println("Add Item");
 
-        boolean isStudent = false;
+        System.out.print("Item Name: ");
+        String name = scanner.nextLine();
 
-        System.out.println("Are you a student? (yes/no) ");
-        String response = scanner.nextLine();
+        System.out.print("Item Price: ");
+        int price = scanner.nextInt();
 
-        if (response.equalsIgnoreCase("yes")) {
-            isStudent = true;
-        } else if (response.equalsIgnoreCase("no")) {
-            isStudent = false;
-        } else {
-            System.out.println("Wrong Input!");
-            scanner.close();
-            return; // Exit early on invalid input
-        }
+        System.out.print("Quantity: ");
+        int quantity = scanner.nextInt();
 
-        if (isStudent) {
-            System.out.println("Student ID: ");
-            studentId = scanner.nextInt();
-            scanner.nextLine(); // Consume leftover newline
+        int addup = price * quantity;
 
-            System.out.println("First Name: ");
-            firstname = scanner.nextLine();
-
-            System.out.println("Last Name: ");
-            lastname = scanner.nextLine();
-
-            System.out.println("Age: ");
-            age = scanner.nextInt();
-            scanner.nextLine(); // Consume leftover newline
-
-            System.out.println("Course: ");
-            course = scanner.nextLine();
-
-            System.out.println("Section: ");
-            section = scanner.nextLine();
-
-            System.out.println("\n--- STUDENT INFORMATION ---");
-            System.out.println("Student ID: " + studentId);
-            System.out.println("Name: " + firstname + " " + lastname);
-            System.out.println("Age: " + age);
-            System.out.println("Course: " + course);
-            System.out.println("Section: " + section);
-        } else {
-            System.out.println("You are not enrolled here!");
-        }
+        System.out.println("\nItem List");
+        System.out.println("Product: " + name);
+        System.out.println("Total Price: " + addup);
 
         scanner.close();
     }
